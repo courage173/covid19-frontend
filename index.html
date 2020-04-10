@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="this is a website for estimating and projecting covid19 cases in a region" />
+  <meta name="google-site-verification" content="oCtkou_ClZKZYimbPGLMMp-B5chdkUpCmFmPNlK46zY" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- <link href="https://fonts.googleapis.com/css?family=Monoton|Oswald:300,400,500" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" type="text/css" charset="UTF-8"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> -->
+
+  <title>Covid19 Estimator</title>
+</head>
+
+<body>
+  <h1 class="title">Welcome to Covid19 Estimator</h1>
+
+  <div class="page_wrapper">
+    <div class="left_wrap">
+      <form onsubmit="">
+
+        <p style="margin-bottom: 0;" class="reg_in">Region Information</p>
+        <p id='error' style='text-align:center; margin: 0; color:red;'></p>
+        <div>
+          <label for="name">name:
+            <input id="name" data-name type="text" name='name' placeholder="name" />
+          </label>
+        </div>
+        <div>
+          <label for="avgAge">Average Age:
+            <input id="aveAge" type="number" name='avgAge' placeholder="avgAge" />
+          </label>
+        </div>
+        <div>
+          <label for="avgDailyIncomeInUSD">avgDailyIncomeInUSD:
+            <input id="aveDailyIncome" type="number" name='avgDailyIncomeInUSD' placeholder="avgDailyIncomeInUSD" />
+          </label>
+
+        </div>
+        <div>
+          <label for="avgDailyIncomePopulation:">avgDailyIncomePopulation:
+            <input id="avgDailyPop" type="number" name='avgDailyIncomePopulation:'
+              placeholder="avgDailyIncomePopulation:" />
+          </label>
+        </div>
+
+        <div>
+          <label for="population">population:
+            <input id="pop" type="number" data-population name='population' placeholder="population" />
+          </label>
+
+        </div>
+        <div>
+          <label for="timeToElapse">timeToElapse:
+            <input id="time" type="number" data-time-to-elapse name="timeToElapse" placeholder="timeToElapse" />
+          </label>
+        </div>
+        <div>
+          <label for="reportedCases">reportedCases:
+            <input id="reportCases" type="number" data-reported-cases name="reportedCases"
+              placeholder="reportedCases" />
+          </label>
+
+        </div>
+        <div>
+          <label for="totalHospitalBeds">totalHospitalBeds:
+            <input id="beds" type="number" data-total-hospital-beds name='totalHospitalBeds'
+              placeholder="totalHospitalBeds" />
+          </label>
+        </div>
+        <p class="reg_in">Period Type</p>
+        <div class="period_type">
+
+          <input data-period-type type="radio" id="days" name="period" value="days">
+          <label for="days">Days</label><br>
+          <input data-period-type type="radio" id="weeks" name="period" value="weeks">
+          <label for="weeks">Weeks</label><br>
+          <input data-period-type type="radio" id="months" name="period" value="months">
+          <label for="months">Months</label>
+        </div>
+        <div class="btn_wrapper">
+          <button id="btn" data-go-estimate type="submit" value="Submit">Submit</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="right_wrap">
+      <p class="reg_in">Estimation Result</p>
+      <div>
+        <h5 style="text-align: center; font-size: 20px; color: #3750B2;">Impact Result</h5>
+        <div class='Impact' style="font-size: 2.5vh;text-align: center;">
+        </div>
+      </div>
+      <hr class="hori" />
+      <div>
+        <h5 style="text-align: center; font-size: 20px; color: #3750B2;">SevereImpact Result</h5>
+        <div style="font-size: 2.5vh; text-align: center;" class="severe"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
